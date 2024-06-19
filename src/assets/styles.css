@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #444;
+    padding: 1rem;
+}
+
+nav form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+nav input[type="text"] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+nav button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #ff4c3b;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+}
+
+nav select {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+}
+
+.filter-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.filter-buttons button:hover {
+    background-color: #ff4c3b;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+main div {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: calc(25% - 2rem);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+main img {
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+main h1 {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+}
+
+main p {
+    font-size: 1rem;
+    color: #555;
+}
+
+main button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+main button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

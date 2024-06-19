@@ -1,0 +1,62 @@
+<!-- // Logo
+// Navbar
+// -> Searchbar 
+// -> Sort
+//-> filterbutton(click==>filter) 4X
+
+
+// Main Product Display Section
+// Product: 
+// -> Bild
+// -> Produktbeschreibung h3
+// Preis (p)
+// Add to cart Button
+// Zweite Seite mit lokal Storage Cart -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Anna und Lisa</title>
+    <link rel="stylesheet" href="./src/assets/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Lisa und Anna's Shop</h1>
+        <nav>
+
+          <form>
+            <input type="text" id="searchText" placeholder="Search by title">
+            <button type="submit" id="searchButton">Search</button>
+          </form>
+
+          <div class="input-group">
+            <label for="sortier-feld">Sort by:</label>
+            <select id="sortier-feld" name="sortier-feld">
+                <option value="#">---</option>
+                <option value="preis-aufsteigend">Name (aufsteigend)</option>
+                <option value="preis absteigend">Name (absteigend)</option>
+                <option value="rating-aufsteigend">Datum (aufsteigend)</option>
+                <option value="rating-absteigend">Datum (absteigend)</option>
+            </select>
+          </div>
+
+          <div>
+            <p>Filter by Categories</p>
+            <button id="filter_electronics">Electronics</button>
+            <button id="filter_jewelery">Jewelery</button>
+            <button id="filter_mens_clothing">Men's Clothing</button>
+            <button id="filter_womens_clothing">Women's Clothing</button>
+          </div>
+        </nav>
+    </header>
+    <main id="main_content_display">
+       
+    </main>
+    <footer>
+
+    </footer>
+    <script type="module" src="./src/main.ts"></script>
+</body>
+</html>
