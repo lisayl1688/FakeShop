@@ -20,6 +20,8 @@ import { Category } from "./contracts/contracts";
 const BASEURL = 'https://fakestoreapi.com/products';
 const ALLELECTRONICS = `${BASEURL}/category/electronics`;
 const ALLJEWELERY = `${BASEURL}/category/jewelery`;
+const ALLMENSCLOTHING = `${BASEURL}/category/men's clothing`;
+const ALLWOMENSCLOTHING = `${BASEURL}/category/women's clothing`;
 
 
 
@@ -131,6 +133,15 @@ sortierFeld.addEventListener("change", sortProducts);
 filterElectronics?.addEventListener('click', () => {
   activateFilterByCategory(ALLELECTRONICS); 
   });
+  filterJewelery?.addEventListener('click', () => {
+    activateFilterByCategory(ALLJEWELERY); 
+    });
+    filterMensClothing?.addEventListener('click', () => {
+      activateFilterByCategory(ALLMENSCLOTHING); 
+      });
+      filterWomensClothing?.addEventListener('click', () => {
+        activateFilterByCategory(ALLWOMENSCLOTHING); 
+        });
 
   function activateFilterByCategory(url: string) {
     fetch (url) 
