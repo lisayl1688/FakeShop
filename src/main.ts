@@ -2,78 +2,74 @@ import { IProduct } from "./contracts/contracts";
 import { IRating } from "./contracts/contracts";
 import { Category } from "./contracts/contracts";
 
-// Logo
-// Navbar
-// -> Searchbar 
-// -> Sort
-//-> filterbutton(click==>filter) 4X
-
-
-// Main Product Display Section
-// Product: 
-// -> Bild
-// -> Produktbeschreibung h3
-// Preis (p)
-// Add to cart Button
-// Zweite Seite mit lokal Storage Cart
-
-const BASEURL = 'https://fakestoreapi.com/products';
+const BASEURL = "https://fakestoreapi.com/products";
 const ALLELECTRONICS = `${BASEURL}/category/electronics`;
 const ALLJEWELERY = `${BASEURL}/category/jewelery`;
 const ALLMENSCLOTHING = `${BASEURL}/category/men's clothing`;
 const ALLWOMENSCLOTHING = `${BASEURL}/category/women's clothing`;
 
-
-
-const searchText = document.getElementById('searchText') as HTMLInputElement;
-const searchButton = document.getElementById('searchButton') as HTMLButtonElement;
-const sortierFeld = document.getElementById('sortier-feld') as HTMLSelectElement;
-const filterElectronics = document.getElementById('filter_electronics') as HTMLButtonElement;
-const filterJewelery = document.getElementById('filter_jewelery') as HTMLButtonElement;
-const filterMensClothing = document.getElementById('filter_mens_clothing') as HTMLButtonElement;
-const filterWomensClothing = document.getElementById('filter_womens_clothing') as HTMLButtonElement;
-const maincontent = document.getElementById('main_content_display') as HTMLElement;
+const searchText = document.getElementById("searchText") as HTMLInputElement;
+const searchButton = document.getElementById(
+  "searchButton"
+) as HTMLButtonElement;
+const sortierFeld = document.getElementById(
+  "sortier-feld"
+) as HTMLSelectElement;
+const filterElectronics = document.getElementById(
+  "filter_electronics"
+) as HTMLButtonElement;
+const filterJewelery = document.getElementById(
+  "filter_jewelery"
+) as HTMLButtonElement;
+const filterMensClothing = document.getElementById(
+  "filter_mens_clothing"
+) as HTMLButtonElement;
+const filterWomensClothing = document.getElementById(
+  "filter_womens_clothing"
+) as HTMLButtonElement;
+const maincontent = document.getElementById(
+  "main_content_display"
+) as HTMLElement;
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetchAllProducts()//lisa
-})
-
+  fetchAllProducts(); //lisa
+});
 
 let allProducts: IProduct[] = [];
 
 // Daten von API holen
 function fetchAllProducts() {
   fetch(BASEURL)
-  .then((response: Response) => {
-    if (!response.ok) {
-      throw Error(`${response.status} ${response.statusText}`);
-    }
-    return response.json();
-  })
-  .then((products: IProduct[]) => {
-    displayProducts(products)
-    allProducts = products;
-  })
-
+    .then((response: Response) => {
+      if (!response.ok) {
+        throw Error(`${response.status} ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then((products: IProduct[]) => {
+      displayProducts(products);
+      allProducts = products;
+    });
 }
 
 // Rendern der Produkte
 function displayProducts(products: IProduct[]) {
-  if(maincontent) {
+  if (maincontent) {
     maincontent.innerHTML = "";
     const singleProductDivs = products.map((product: IProduct) => {
-      const divElement = document.createElement('div');
-      const imgElement = document.createElement('img');
+      const divElement = document.createElement("div");
+      const imgElement = document.createElement("img");
       imgElement.src = product.image; // src statt innerhtml lisa
       divElement.appendChild(imgElement);
-      const headline = document.createElement('h1');
+      const headline = document.createElement("h1");
       headline.innerHTML = product.title;
       divElement.appendChild(headline);
-      const divElementInner = document.createElement('div');
-      const price = document.createElement('p');
-      price.innerHTML = product.price.toString();
-      const addCart = document.createElement('button');
-      addCart.innerHTML = "add to Cart"; // damit add card im html steht Lisa
+      // Div für Preis und AddtoCart
+      const divElementInner = document.createElement("div");
+      const price = document.createElement("p");
+      price.innerHTML = product.price.toString(); // hier fehlt noch der Preis
+      const addCart = document.createElement("button");
+      addCart.innerHTML = "Add to Cart"; // damit add cart im html steht Lisa
       divElementInner.appendChild(price);
       divElementInner.appendChild(addCart);
       divElement.appendChild(divElementInner);
@@ -90,23 +86,22 @@ function sortProducts(event: Event): void {
   event.preventDefault();
   const sortValue = sortierFeld.value;
   switch (sortValue) {
-    case 'preis-aufsteigend':
+    case "preis-aufsteigend":
       console.log("test");
       sortPriceAscending();
       break;
-    case 'preis-absteigend':
+    case "preis-absteigend":
       sortPriceDescending();
       break;
-    case 'rating-aufsteigend':
+    case "rating-aufsteigend":
       sortRatingAscending();
       break;
-    case 'rating-absteigend':
+    case "rating-absteigend":
       sortRatingDescending();
       break;
   }
   console.log(allProducts);
   displayProducts(allProducts);
-
 }
 
 function sortPriceAscending() {
@@ -129,22 +124,21 @@ sortierFeld.addEventListener("change", sortProducts);
 
 // //? const filterElectronics = document.getElementById('filter_electronics') as HTMLButtonElement;
 
+filterElectronics?.addEventListener("click", () => {
+  activateFilterByCategory(ALLELECTRONICS);
+});
+filterJewelery?.addEventListener("click", () => {
+  activateFilterByCategory(ALLJEWELERY);
+});
+filterMensClothing?.addEventListener("click", () => {
+  activateFilterByCategory(ALLMENSCLOTHING);
+});
+filterWomensClothing?.addEventListener("click", () => {
+  activateFilterByCategory(ALLWOMENSCLOTHING);
+});
 
-filterElectronics?.addEventListener('click', () => {
-  activateFilterByCategory(ALLELECTRONICS); 
-  });
-  filterJewelery?.addEventListener('click', () => {
-    activateFilterByCategory(ALLJEWELERY); 
-    });
-    filterMensClothing?.addEventListener('click', () => {
-      activateFilterByCategory(ALLMENSCLOTHING); 
-      });
-      filterWomensClothing?.addEventListener('click', () => {
-        activateFilterByCategory(ALLWOMENSCLOTHING); 
-        });
-
-  function activateFilterByCategory(url: string) {
-    fetch (url) 
+function activateFilterByCategory(url: string) {
+  fetch(url)
     .then((response: Response) => {
       if (!response.ok) {
         throw Error(`${response.status} ${response.statusText}`);
@@ -152,11 +146,11 @@ filterElectronics?.addEventListener('click', () => {
       return response.json();
     })
     // wird übergeben von Response
-    .then((products: IProduct []) => {
+    .then((products: IProduct[]) => {
       // sortierter Array wird in die Render Funktion gegeben
       displayProducts(products);
     })
     .catch((error: Error) => {
       console.error(error);
-    })
-  }
+    });
+}

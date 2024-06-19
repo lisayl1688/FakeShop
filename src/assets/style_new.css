@@ -1,0 +1,134 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+header {
+  width: 100vw;
+  margin: 20px 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  padding: 15px;
+}
+
+#logo {
+  width: 200px;
+}
+
+.icons {
+  width: 20px;
+}
+
+#filter_section {
+  display: flex;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger-menu .line {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+#filter_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  padding-bottom: 30px;
+  border-bottom: 0.1px solid grey;
+}
+
+#categories {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"],
+button,
+select {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+
+#main_content_display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Produkt Card */
+#main_content_display > div {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Preis und AddtoCart */
+#main_content_display > div > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#main_content_display img {
+  width: 100%;
+  height: 70%;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+#main_content_display h1 {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+#main_content_display p {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+#main_content_display button {
+  font-size: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+#main_content_display button:hover {
+  background-color: #ccc; /
+}

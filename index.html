@@ -1,62 +1,64 @@
-<!-- // Logo
-// Navbar
-// -> Searchbar 
-// -> Sort
-//-> filterbutton(click==>filter) 4X
-
-
-// Main Product Display Section
-// Product: 
-// -> Bild
-// -> Produktbeschreibung h3
-// Preis (p)
-// Add to cart Button
-// Zweite Seite mit lokal Storage Cart -->
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop Anna und Lisa</title>
-    <link rel="stylesheet" href="./src/assets/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/assets/style_new.css" />
+  </head>
+  <body>
     <header>
-        <h1>Anna und Lisa's Shop</h1>
-        <nav>
+      <!-- Burger Menu -->
+      <nav class="navbar">
+        <div class="burger-menu" id="burger-menu">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <!-- Logo -->
+        <img id="logo" src="./src/assets/logo.png" alt="logo" />
+        <!-- Icons -->
+        <div id="user">
+          <img src="./src/assets/person.png" alt="person" class="icons" />
+          <img src="./src/assets/heart.png" alt="person" class="icons" />
+          <img src="./src/assets/shop.png" alt="person" class="icons" />
+        </div>
+      </nav>
 
-          <form>
-            <input type="text" id="searchText" placeholder="Search by title">
-            <button type="submit" id="searchButton">Search</button>
-          </form>
+      <section id="filter_section">
+        <form>
+          <input type="text" id="searchText" placeholder="Search by title" />
+          <button type="submit" id="searchButton">Search</button>
+        </form>
 
-          <div class="input-group">
-            <label for="sortier-feld">Sort by:</label>
-            <select id="sortier-feld" name="sortier-feld">
-                <option value="#">Select an option</option>
-                <option value="preis-aufsteigend">Name (aufsteigend)</option>
-                <option value="preis-absteigend">Name (absteigend)</option>
-                <option value="rating-aufsteigend">Datum (aufsteigend)</option>
-                <option value="rating-absteigend">Datum (absteigend)</option>
-            </select>
-          </div>
+        <div class="input-group">
+          <label for="sortier-feld">Sort by:</label>
+          <select id="sortier-feld" name="sortier-feld">
+            <option value="#">Select an option</option>
+            <option value="preis-aufsteigend">Name (aufsteigend)</option>
+            <option value="preis-absteigend">Name (absteigend)</option>
+            <option value="rating-aufsteigend">Datum (aufsteigend)</option>
+            <option value="rating-absteigend">Datum (absteigend)</option>
+          </select>
+        </div>
 
-          <div>
-            <p>Filter by Categories</p>
-            <button id="filter_electronics">Electronics</button>
-            <button id="filter_jewelery">Jewelery</button>
-            <button id="filter_mens_clothing">Men's Clothing</button>
-            <button id="filter_womens_clothing">Women's Clothing</button>
-          </div>
-        </nav>
+        <div id="categories">
+          <p>Filter by Categories</p>
+          <button id="filter_electronics">Electronics</button>
+          <button id="filter_jewelery">Jewelery</button>
+          <button id="filter_mens_clothing">Men's Clothing</button>
+          <button id="filter_womens_clothing">Women's Clothing</button>
+        </div>
+      </section>
     </header>
-    <main id="main_content_display">
-       
-    </main>
-    <footer>
 
-    </footer>
+    <main id="main_content_display"></main>
+    <footer></footer>
     <script type="module" src="./src/main.ts"></script>
-</body>
+  </body>
 </html>
