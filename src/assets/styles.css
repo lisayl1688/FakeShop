@@ -1,8 +1,8 @@
 /* General body styling */
 body {
-    font-family: 'Georgia', serif; /* Serif font for a classic look */
-    background-color: #ede7d6; /* Light cream background */
-    color: #4d4b4a; /* Dark text for readability */
+    font-family: 'Georgia', serif; 
+    background-color: #d8cdc2; 
+    color: #4d4b4a; 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -30,10 +30,16 @@ body {
     background-color: #f4f3f3;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    gap: 5%;
     align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
   
   nav img {
     height: 60px;
@@ -47,7 +53,7 @@ body {
   }
   
   nav button, nav select {
-    background-color: #b5a79c; /* Warm beige for buttons */
+    background-color: #b5a79c;
     color: 4d4b4a;
     border: none;
     border-radius: 10px;
@@ -55,15 +61,15 @@ body {
     margin-left: 15px;
     cursor: pointer;
     font-size: 16px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth effect */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adding shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     font-family: cursive;
   }
   
   nav button:hover, nav select:hover {
-    background-color: #afa094; /* Slightly darker on hover */
-    transform: scale(1.05); /* Slightly increase size */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    background-color: #b5a79c;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2)
   }
   
   
@@ -77,8 +83,7 @@ body {
   }
   
   #main_content_display div {
-    background-color: #f4f3f3; /* White background for products */
-    /* border: 1px solid #c9b8af; */
+    background-color: #f4f3f3;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 280px;
@@ -87,7 +92,6 @@ body {
   }
   
   #main_content_display div:hover {
-    /* transform: translateY(-10px); Lift effect on hover */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   }
   
@@ -100,7 +104,7 @@ body {
   #main_content_display h1 {
     font-size: 1.4em;
     margin: 15px;
-    color: #4d4b4a; /* Rich brown for headings */
+    color: #4d4b4a;
     height: 18%;
     display: flex;
     justify-content: center;
@@ -111,18 +115,18 @@ body {
   #main_content_display p {
     font-size: 1.2em;
     margin: 15px;
-    color: #555; /* Slightly lighter shade for text */
+    color: #555;
   }
   
   #main_content_display button {
-    background-color: #b29983;
+    background-color: #b5a79c;
     color: 4d4b4a;
     border: none;
     border-radius: 5px;
     padding: 15px;
     margin: 15px;
     cursor: pointer;
-    width: calc(100% - 30px); /* Full width minus margins */
+    width: calc(100% - 30px);
     font-size: 16px;
   }
   
@@ -130,3 +134,9 @@ body {
     background-color: #b5a79c;
   }
   
+
+  #statusText {
+    display: flex;
+    justify-content: center;
+    
+  }

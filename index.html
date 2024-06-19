@@ -28,7 +28,7 @@
 
           <form>
             <input type="text" id="searchText" placeholder="Search by title">
-            <button type="submit" id="searchButton">Search</button>
+            <button type="button" id="searchButton">Search</button>
           </form>
 
           <div class="input-group">
@@ -42,17 +42,20 @@
             </select>
           </div>
 
-          <div>
-            <p>Filter by Categories</p>
-            <button id="filter_electronics">Electronics</button>
-            <button id="filter_jewelery">Jewelery</button>
-            <button id="filter_mens_clothing">Men's Clothing</button>
-            <button id="filter_womens_clothing">Women's Clothing</button>
+          <div class="categories">
+            <p>Filter by Categories:</p>
+            <div>
+              <button id="filter_electronics">Electronics</button>
+              <button id="filter_jewelery">Jewelery</button>
+              <button id="filter_mens_clothing">Men's Clothing</button>
+              <button id="filter_womens_clothing">Women's Clothing</button>
+            </div>
           </div>
         </nav>
+        <div id="statusText"></div>
     </header>
+    
     <main id="main_content_display">
-       
     </main>
     <footer>
 

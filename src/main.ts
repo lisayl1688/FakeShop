@@ -33,6 +33,7 @@ const filterJewelery = document.getElementById('filter_jewelery') as HTMLButtonE
 const filterMensClothing = document.getElementById('filter_mens_clothing') as HTMLButtonElement;
 const filterWomensClothing = document.getElementById('filter_womens_clothing') as HTMLButtonElement;
 const maincontent = document.getElementById('main_content_display') as HTMLElement;
+const statusDiv = document.getElementById('statusText') as HTMLDivElement;
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchAllProducts()//lisa
@@ -160,3 +161,43 @@ filterElectronics?.addEventListener('click', () => {
       console.error(error);
     })
   }
+
+
+
+
+searchButton?.addEventListener('click', (event: Event) => {
+  event.preventDefault;
+  let products = findSearchedText ();
+  displayProducts(products);
+  console.log(findSearchedText());
+
+  const createtStatuselement = document.createElement('p');
+  if(products.length>0){
+    statusDiv.innerHTML = "";
+    createtStatuselement.innerHTML = `Es wurden erfolgreich ${products.length} Produkte gefunden.`
+    createtStatuselement.style.backgroundColor = "#b5a79c";
+    createtStatuselement.style.padding = "2%";
+    createtStatuselement.style.borderRadius = "15px";
+    statusDiv.appendChild(createtStatuselement);
+  }else{
+    statusDiv.innerHTML = "";
+    createtStatuselement.innerHTML = `Es wurden leider keine Produkte gefunden.`
+    createtStatuselement.style.backgroundColor = "#b5a79c";
+    createtStatuselement.style.padding = "2%";
+    createtStatuselement.style.borderRadius = "15px";
+    statusDiv.appendChild(createtStatuselement);
+  }
+  });
+  
+
+
+function findSearchedText() {
+  const searchTextInputValue = searchText.value;
+  const allProductsWithSearchedText = allProducts.filter(product =>
+      product.title.toLowerCase().includes(searchTextInputValue.toLowerCase())
+  );
+  return allProductsWithSearchedText;
+}
+
+
+// const statusDiv = document.getElementById('statusText') as HTMLDivElement;
