@@ -22,7 +22,8 @@
         </div>
         <!-- Logo -->
         <a href="#" onclick="window.location.reload(false);">
-        <img id="logo"  src="./src/assets/logo.png" alt="logo" /></a>
+          <img id="logo" src="./src/assets/logo.png" alt="logo"
+        /></a>
         <!-- Icons -->
         <div id="user">
           <img src="./src/assets/person.png" alt="person" class="icons" />
@@ -50,17 +51,63 @@
 
         <div id="categories">
           <p>Filter by Categories</p>
-          <button id="filter_electronics" class="filter_button">Electronics</button>
+          <button id="filter_electronics" class="filter_button">
+            Electronics
+          </button>
           <button id="filter_jewelery" class="filter_button">Jewelery</button>
-          <button id="filter_mens_clothing" class="filter_button">Men's Clothing</button>
-          <button id="filter_womens_clothing" class="filter_button">Women's Clothing</button>
+          <button id="filter_mens_clothing" class="filter_button">
+            Men's Clothing
+          </button>
+          <button id="filter_womens_clothing" class="filter_button">
+            Women's Clothing
+          </button>
         </div>
       </section>
       <div id="statusText"></div>
     </header>
 
     <main id="main_content_display"></main>
-    <footer></footer>
+
+    <footer class="footer">
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>Immermannstraße 123<br />Little Tokyo, Germany</p>
+        <p>Email: contact@lisa_anna_shop.com</p>
+        <p>Phone: +123 456 7890</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Newsletter</h4>
+        <form>
+          <input type="email" placeholder="Your email address" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"
+            ><img src="./src/assets/facebook (1).png" alt="Facebook"
+          /></a>
+          <a href="#"
+            ><img src="./src/assets/twitter (1).png" alt="Twitter"
+          /></a>
+          <a href="#"
+            ><img src="./src/assets/instagram.png" alt="Instagram"
+          /></a>
+          <a href="#"><img src="./src/assets/youtube.png" alt="YouTube" /></a>
+        </div>
+      </div>
+    </footer>
+
     <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
