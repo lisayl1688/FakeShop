@@ -56,9 +56,8 @@ function displayProducts(products: IProduct[]) {
       // Div für Preis und AddtoCart
       const divElementInner = document.createElement("div");
       const price = document.createElement("p");
-      price.innerHTML = product.price.toString(); // hier fehlt noch der Preis
       const addCart = document.createElement("button");
-      addCart.innerHTML = "Add to Cart"; // damit add cart im html steht Lisa
+      addCart.innerHTML = "Add to Cart";
       divElementInner.appendChild(price);
       divElementInner.appendChild(addCart);
       divElement.appendChild(divElementInner);
@@ -116,15 +115,19 @@ sortierFeld.addEventListener("change", sortProducts);
 
 filterElectronics?.addEventListener("click", () => {
   activateFilterByCategory(ALLELECTRONICS);
+  toggleActiveButton(filterElectronics);
 });
 filterJewelery?.addEventListener("click", () => {
   activateFilterByCategory(ALLJEWELERY);
+  toggleActiveButton(filterElectronics);
 });
 filterMensClothing?.addEventListener("click", () => {
   activateFilterByCategory(ALLMENSCLOTHING);
+  toggleActiveButton(filterElectronics);
 });
 filterWomensClothing?.addEventListener("click", () => {
   activateFilterByCategory(ALLWOMENSCLOTHING);
+  toggleActiveButton(filterElectronics);
 });
 
 function activateFilterByCategory(url: string) {
@@ -192,8 +195,12 @@ const buttons = document.querySelectorAll(".filter_button") as NodeListOf<HTMLBu
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    // Entferne die aktive Klasse von allen Buttons
     buttons.forEach((btn) => btn.classList.remove("active"));
-    // Füge die aktive Klasse zum geklickten Button hinzu
     button.classList.add("active");
   })})
+
+  function toggleActiveButton(button: HTMLButtonElement) {
+    const filterButtons = [filterElectronics, filterJewelery, filterMensClothing, filterWomensClothing];
+    filterButtons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+}
