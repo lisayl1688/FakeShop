@@ -113,6 +113,7 @@ sortierFeld.addEventListener("change", sortProducts);
 
 // //? const filterElectronics = document.getElementById('filter_electronics') as HTMLButtonElement;
 
+
 filterElectronics?.addEventListener("click", () => {
   activateFilterByCategory(ALLELECTRONICS);
 });
@@ -157,14 +158,14 @@ searchButton?.addEventListener('click', (event: Event) => {
   if(products.length>0){
     statusDiv.innerHTML = "";
     createtStatuselement.innerHTML = `Es wurden erfolgreich ${products.length} Produkte gefunden.`
-    createtStatuselement.style.backgroundColor = "#b5a79c";
+    createtStatuselement.style.backgroundColor = "#a7c4c8";
     createtStatuselement.style.padding = "2%";
     createtStatuselement.style.borderRadius = "15px";
     statusDiv.appendChild(createtStatuselement);
   }else{
     statusDiv.innerHTML = "";
     createtStatuselement.innerHTML = `Es wurden leider keine Produkte gefunden.`
-    createtStatuselement.style.backgroundColor = "#b5a79c";
+    createtStatuselement.style.backgroundColor = "#a7c4c8";
     createtStatuselement.style.padding = "2%";
     createtStatuselement.style.borderRadius = "15px";
     statusDiv.appendChild(createtStatuselement);
@@ -181,5 +182,18 @@ function findSearchedText() {
   return allProductsWithSearchedText;
 }
 
+//?footer
+//?hover-zoom-bilder
+//?ausgewählt category farblich zeigen
+//?
 
-// const statusDiv = document.getElementById('statusText') as HTMLDivElement;
+
+const buttons = document.querySelectorAll(".filter_button") as NodeListOf<HTMLButtonElement>;
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    // Entferne die aktive Klasse von allen Buttons
+    buttons.forEach((btn) => btn.classList.remove("active"));
+    // Füge die aktive Klasse zum geklickten Button hinzu
+    button.classList.add("active");
+  })})

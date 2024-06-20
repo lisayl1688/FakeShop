@@ -21,7 +21,8 @@
           <div class="line"></div>
         </div>
         <!-- Logo -->
-        <img id="logo" src="./src/assets/logo.png" alt="logo" />
+        <a href="#" onclick="window.location.reload(false);">
+        <img id="logo"  src="./src/assets/logo.png" alt="logo" /></a>
         <!-- Icons -->
         <div id="user">
           <img src="./src/assets/person.png" alt="person" class="icons" />
@@ -33,7 +34,7 @@
       <section id="filter_section">
         <form>
           <input type="text" id="searchText" placeholder="Search by title" />
-          <button type="submit" id="searchButton">Search</button>
+          <button type="button" id="searchButton">Search</button>
         </form>
 
         <div class="input-group">
@@ -49,12 +50,13 @@
 
         <div id="categories">
           <p>Filter by Categories</p>
-          <button id="filter_electronics">Electronics</button>
-          <button id="filter_jewelery">Jewelery</button>
-          <button id="filter_mens_clothing">Men's Clothing</button>
-          <button id="filter_womens_clothing">Women's Clothing</button>
+          <button id="filter_electronics" class="filter_button">Electronics</button>
+          <button id="filter_jewelery" class="filter_button">Jewelery</button>
+          <button id="filter_mens_clothing" class="filter_button">Men's Clothing</button>
+          <button id="filter_womens_clothing" class="filter_button">Women's Clothing</button>
         </div>
       </section>
+      <div id="statusText"></div>
     </header>
 
     <main id="main_content_display"></main>
