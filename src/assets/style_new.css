@@ -94,8 +94,8 @@ button:hover {
 /* Produkt Card */
 #main_content_display > div {
   background-color: #fff;
-  padding: 20px;
-  /* height: 90%; */
+  padding: 10%;
+  height: 42rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -115,6 +115,20 @@ button:hover {
 #main_content_display img:hover {
   transform: scale(1.1);
 }
+
+#main_content_display .heart {
+  width: 20px;
+    height: auto;
+    margin-top: 5px;
+    margin: 10px 0;
+    object-fit: contain;
+    transition: none;
+}
+/* .heart.favorited {
+  filter: invert(40%) sepia(90%) saturate(350%) hue-rotate(330deg) brightness(90%) contrast(90%);
+} */
+
+
 
 #main_content_display h1 {
   font-size: 12px;
@@ -151,7 +165,7 @@ button:hover {
 }
 
 .active {
-  background-color: #4CAF50;
+  background-color: #A7C4C8;
   color: white;
 }
 
@@ -240,4 +254,19 @@ button:hover {
 
 .social-icons img:hover {
   opacity: 0.5;
+}
+
+#loading {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 12px solid  #5d3ede;
+  border-top: 12px solid #00ecaa;
+  border-radius: 50%;
+  animation: spin 1.0s linear infinite, move 1.0s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

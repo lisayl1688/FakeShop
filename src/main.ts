@@ -47,24 +47,45 @@ function displayProducts(products: IProduct[]) {
     maincontent.innerHTML = "";
     const singleProductDivs = products.map((product: IProduct) => {
       const divElement = document.createElement("div");
+      const stillLoading = document.createElement("div");
+      stillLoading.id = "loading";
+      divElement.appendChild(stillLoading);
       const imgElement = document.createElement("img");
       imgElement.src = product.image; // src statt innerhtml lisa
-      divElement.appendChild(imgElement);
       const headline = document.createElement("h1");
       headline.innerHTML = product.title;
-      divElement.appendChild(headline);
-      // Div für Preis und AddtoCart
+      const heart = document.createElement("img");
+      heart.src = "./src/assets/heart_unclicked.png";
+      heart.classList.add("heart");
+      heart.id = 'favorite_heart';
+      // heart
+      const heart_clicked = "./src/assets/heart_clicked.png";
+      const heart_unclicked = "./src/assets/heart_unclicked.png";
+      // Klick-Event-Listener hinzufügen
+      heart.addEventListener('click', () => {
+      // Bildquelle umschalten
+      if (heart.src.includes("unclicked")) {
+        console.log("test");
+      heart.src = heart_clicked;
+      } else {
+      heart.src = heart_unclicked;
+      }});
       const divElementInner = document.createElement("div");
       const price = document.createElement("p");
+      price.innerHTML = product.price.toString()+"€";
       const addCart = document.createElement("button");
       addCart.innerHTML = "Add to Cart";
       divElementInner.appendChild(price);
       divElementInner.appendChild(addCart);
-      divElement.appendChild(divElementInner);
+      divElement.appendChild(imgElement);
+      divElement.appendChild(headline);
+      divElement.appendChild(divElementInner); // Preis und Button
+      divElement.appendChild(heart);
+      divElement.removeChild(stillLoading);
       return divElement;
     });
     singleProductDivs.forEach((product) => {
-      maincontent.appendChild(product); //lisa
+      maincontent.appendChild(product); 
     });
   }
 }
@@ -126,6 +147,7 @@ filterMensClothing?.addEventListener("click", () => {
   toggleActiveButton(filterElectronics);
 });
 filterWomensClothing?.addEventListener("click", () => {
+  console.log('button_clicked');
   activateFilterByCategory(ALLWOMENSCLOTHING);
   toggleActiveButton(filterElectronics);
 });
@@ -204,3 +226,5 @@ buttons.forEach((button) => {
     filterButtons.forEach(btn => btn.classList.remove("active"));
     button.classList.add("active");
 }
+
+
