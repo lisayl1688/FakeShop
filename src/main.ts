@@ -1,6 +1,5 @@
 import { IProduct } from "./contracts/contracts";
-import { IRating } from "./contracts/contracts";
-import { Category } from "./contracts/contracts";
+
 
 const BASEURL = "https://fakestoreapi.com/products";
 const ALLELECTRONICS = `${BASEURL}/category/electronics`;
