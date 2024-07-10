@@ -1,6 +1,6 @@
 # Fake Shop Application
 
-> ![Preview screenshot](./src/assets/img/preview_FakeShop.png)
+> ![Preview screenshot](./src/assets/preview_FakeShop.png)
 
 ## Overview
 This application allows users to browse, filter, and sort products from a fake store API. It includes functionality for searching products, adding them to a cart, and marking them as favorites.
